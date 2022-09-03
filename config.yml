@@ -1,0 +1,5 @@
+#host: "localhost/api/"
+#host: "https://space-tycoon.garage-trip.cz/api/"
+host: "?"
+user: "?"
+password: "?"
