@@ -9,8 +9,9 @@ Name | Type | Description | Notes
 **prices** | [**Price**](Price.md) |  | 
 **resource_amounts** | [**dict(str, ResourceAmount)**](ResourceAmount.md) |  | 
 **scores** | [**Score**](Score.md) |  | 
-**season** | **int** |  | 
-**tick** | **int** |  | 
+**season_scores** | **dict(str, dict(str, int))** | user | [optional] 
+**season** | **int** | requested / last season | 
+**tick** | **int** | requested / last tick in the season | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

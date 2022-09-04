@@ -1,5 +1,5 @@
-#host: "localhost/api/"
-#host: "https://space-tycoon.garage-trip.cz/api/"
+#host: "localhost"
+#host: "https://space-tycoon.garage-trip.cz"
 host: "?"
 user: "?"
 password: "?"

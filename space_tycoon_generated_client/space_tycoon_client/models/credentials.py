@@ -29,25 +29,21 @@ class Credentials(object):
     """
     swagger_types = {
         'username': 'str',
-        'password': 'str',
-        'player': 'str'
+        'password': 'str'
     }
 
     attribute_map = {
         'username': 'username',
-        'password': 'password',
-        'player': 'player'
+        'password': 'password'
     }
 
-    def __init__(self, username=None, password=None, player=None):  # noqa: E501
+    def __init__(self, username=None, password=None):  # noqa: E501
         """Credentials - a model defined in Swagger"""  # noqa: E501
         self._username = None
         self._password = None
-        self._player = None
         self.discriminator = None
         self.username = username
         self.password = password
-        self.player = player
 
     @property
     def username(self):
@@ -94,29 +90,6 @@ class Credentials(object):
             raise ValueError("Invalid value for `password`, must not be `None`")  # noqa: E501
 
         self._password = password
-
-    @property
-    def player(self):
-        """Gets the player of this Credentials.  # noqa: E501
-
-
-        :return: The player of this Credentials.  # noqa: E501
-        :rtype: str
-        """
-        return self._player
-
-    @player.setter
-    def player(self, player):
-        """Sets the player of this Credentials.
-
-
-        :param player: The player of this Credentials.  # noqa: E501
-        :type: str
-        """
-        if player is None:
-            raise ValueError("Invalid value for `player`, must not be `None`")  # noqa: E501
-
-        self._player = player
 
     def to_dict(self):
         """Returns the model properties as a dict"""

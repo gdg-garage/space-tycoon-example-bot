@@ -107,7 +107,6 @@ class Game:
         player, status, headers = self.client.login_post_with_http_info(Credentials(
             username=self.config["user"],
             password=self.config["password"],
-            player=self.config["user"],
         ), _return_http_data_only=False)
         self.client.api_client.cookie = headers['Set-Cookie']
         player: PlayerId = player

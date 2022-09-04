@@ -34,6 +34,7 @@ class Reports(object):
         'prices': 'Price',
         'resource_amounts': 'dict(str, ResourceAmount)',
         'scores': 'Score',
+        'season_scores': 'dict(str, dict(str, int))',
         'season': 'int',
         'tick': 'int'
     }
@@ -45,11 +46,12 @@ class Reports(object):
         'prices': 'prices',
         'resource_amounts': 'resourceAmounts',
         'scores': 'scores',
+        'season_scores': 'seasonScores',
         'season': 'season',
         'tick': 'tick'
     }
 
-    def __init__(self, combat=None, trade=None, profiling=None, prices=None, resource_amounts=None, scores=None, season=None, tick=None):  # noqa: E501
+    def __init__(self, combat=None, trade=None, profiling=None, prices=None, resource_amounts=None, scores=None, season_scores=None, season=None, tick=None):  # noqa: E501
         """Reports - a model defined in Swagger"""  # noqa: E501
         self._combat = None
         self._trade = None
@@ -57,6 +59,7 @@ class Reports(object):
         self._prices = None
         self._resource_amounts = None
         self._scores = None
+        self._season_scores = None
         self._season = None
         self._tick = None
         self.discriminator = None
@@ -66,6 +69,8 @@ class Reports(object):
         self.prices = prices
         self.resource_amounts = resource_amounts
         self.scores = scores
+        if season_scores is not None:
+            self.season_scores = season_scores
         self.season = season
         self.tick = tick
 
@@ -210,9 +215,33 @@ class Reports(object):
         self._scores = scores
 
     @property
+    def season_scores(self):
+        """Gets the season_scores of this Reports.  # noqa: E501
+
+        user  # noqa: E501
+
+        :return: The season_scores of this Reports.  # noqa: E501
+        :rtype: dict(str, dict(str, int))
+        """
+        return self._season_scores
+
+    @season_scores.setter
+    def season_scores(self, season_scores):
+        """Sets the season_scores of this Reports.
+
+        user  # noqa: E501
+
+        :param season_scores: The season_scores of this Reports.  # noqa: E501
+        :type: dict(str, dict(str, int))
+        """
+
+        self._season_scores = season_scores
+
+    @property
     def season(self):
         """Gets the season of this Reports.  # noqa: E501
 
+        requested / last season  # noqa: E501
 
         :return: The season of this Reports.  # noqa: E501
         :rtype: int
@@ -223,6 +252,7 @@ class Reports(object):
     def season(self, season):
         """Sets the season of this Reports.
 
+        requested / last season  # noqa: E501
 
         :param season: The season of this Reports.  # noqa: E501
         :type: int
@@ -236,6 +266,7 @@ class Reports(object):
     def tick(self):
         """Gets the tick of this Reports.  # noqa: E501
 
+        requested / last tick in the season  # noqa: E501
 
         :return: The tick of this Reports.  # noqa: E501
         :rtype: int
@@ -246,6 +277,7 @@ class Reports(object):
     def tick(self, tick):
         """Sets the tick of this Reports.
 
+        requested / last tick in the season  # noqa: E501
 
         :param tick: The tick of this Reports.  # noqa: E501
         :type: int
